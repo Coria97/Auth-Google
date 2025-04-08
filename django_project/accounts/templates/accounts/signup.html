@@ -1,0 +1,31 @@
+{% extends "accounts/base.html" %}
+
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+<div class="form-container">
+    <h2>Sign Up</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Sign Up</button>
+    </form>
+
+    <!-- Este div contiene las opciones de inicio de sesión social -->
+    <div class="social-login">
+        <!-- Texto que indica la opción alternativa de registro -->
+        <p>Or sign up with:</p>
+        <!-- 
+        Enlace que inicia el flujo de autenticación con Google OAuth2
+        {% url 'social:begin' 'google-oauth2' %} genera la URL para iniciar el proceso
+        -->
+        <a href="{% url 'social:begin' 'google-oauth2' %}">
+            <!-- Icono de Google con estilo para el tamaño y margen -->
+            <img src="https://www.google.com/favicon.ico" alt="Google" style="width: 20px; margin-right: 8px;">
+            Google
+        </a>
+    </div>
+
+    <p class="auth-link">Already have an account? <a href="{% url 'login' %}">Login</a></p>
+</div>
+{% endblock %} 

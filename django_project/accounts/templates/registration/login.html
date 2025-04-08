@@ -1,0 +1,33 @@
+{% extends "accounts/base.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<div class="form-container">
+    <h2>Login</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Login</button>
+    </form>
+
+    <div class="social-login">
+        <!-- Este div contiene las opciones de inicio de sesión social -->
+        <p>Or login with:</p>
+        <!-- 
+        Enlace que inicia el flujo de autenticación con Google OAuth2.
+        Cuando el usuario hace clic, se redirige a la página de inicio de sesión de Google.
+        {% url 'social:begin' 'google-oauth2' %} genera la URL para iniciar el proceso de OAuth2.
+        Después de autenticarse en Google, el usuario será redirigido de vuelta a nuestra aplicación
+        con un token que se usa para crear o actualizar su cuenta.
+        -->
+        <a href="{% url 'social:begin' 'google-oauth2' %}">
+            <!-- Icono de Google junto al texto para mejor experiencia visual -->
+            <img src="https://www.google.com/favicon.ico" alt="Google" style="width: 20px; margin-right: 8px;">
+            Google
+        </a>
+    </div>
+
+    <p class="auth-link">Don't have an account? <a href="{% url 'signup' %}">Sign Up</a></p>
+</div>
+{% endblock %} 

@@ -1,0 +1,81 @@
+# Environment variables
+.env
+.env.local
+.env.*.local
+.venv
+env/
+venv/
+ENV/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Django
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+media/
+static/
+staticfiles/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+.settings/
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Archivos de cobertura y testing
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Archivos de distribución
+*.tar.gz
+*.zip
+*.rar
+*.7z
+
+# Archivos de configuración local
+local_settings.py
+settings_local.py
+
+# Archivos de migración (opcional, depende de tu flujo de trabajo)
+# accounts/migrations/*.py
+# !accounts/migrations/__init__.py 
